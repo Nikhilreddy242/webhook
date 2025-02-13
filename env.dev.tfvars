@@ -12,7 +12,7 @@ api_gateway_apis = [
   "wmtm-api-us-east-1-dev-a"
 ]
 
-alarm_actions = ["arn:aws:sns:us-east-1:123456789012:alarm-notifications"]
+alarm_actions = [aws_sns_topic.alarm_notifications.arn]
 
 lambda_metrics = [
   { name = "Invocations", statistic = "Sum", period = 300, evaluation_periods = 1, threshold = 1, comparison_operator = "GreaterThanThreshold" },
